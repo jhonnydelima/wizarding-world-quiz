@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import db from '../db.json';
+import Head from 'next/head';
 import Widget from '../src/components/Widget';
 import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
@@ -28,6 +29,14 @@ export const QuizContainer = styled.div`
 export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
+
+      <Head>
+        <title>Wizarding World Quiz</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta property="og:image" content="https://www.einerd.com.br/wp-content/uploads/2020/09/hogwarts-legacy-harry-potter-e1600436304404.jpg" />
+      </Head>
+
       <QuizContainer>
         <Widget>
           <Widget.Header>
