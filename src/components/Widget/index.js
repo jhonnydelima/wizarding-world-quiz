@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import styled from 'styled-components';
 import db from '../../../db.json';
 

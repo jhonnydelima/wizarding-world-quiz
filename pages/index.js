@@ -1,10 +1,14 @@
+/* eslint-disable import/no-unresolved */
+import React from 'react';
 import styled from 'styled-components';
+import { useRouter } from 'next/router';
+
 import db from '../db.json';
-import Head from 'next/head';
-import Widget from '../src/components/Widget';
-import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
+import QuizBackground from '../src/components/QuizBackground';
+import QuizLogo from '../src/components/QuizLogo';
+import Widget from '../src/components/Widget';
 
 // const BackgroundImage = styled.div`
 //   background-image: url(${db.bg});
@@ -27,24 +31,38 @@ export const QuizContainer = styled.div`
 `;
 
 export default function Home() {
+  const router = useRouter();
+  const [name, setName] = React.useState('');
+
   return (
     <QuizBackground backgroundImage={db.bg}>
-
-      <Head>
-        <title>Wizarding World Quiz</title>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta property="og:image" content="https://www.einerd.com.br/wp-content/uploads/2020/09/hogwarts-legacy-harry-potter-e1600436304404.jpg" />
-      </Head>
-
       <QuizContainer>
+        <QuizLogo />
         <Widget>
           <Widget.Header>
-            <h1>Harry Potter</h1>
+            <h1>{db.title}</h1>
           </Widget.Header>
-
           <Widget.Content>
-            <p>lorem ipsum dolor sit amet...</p>
+            <p>{db.description}</p>
+            <form onSubmit={function (event) {
+              event.preventDefault();
+              router.push(`/quiz?name=${name}`);
+              console.log('Fazendo submissão por meio do react');
+            }}
+            >
+              <input
+                onChange={function (event) {
+                  console.log(event.target.value);
+                  // State
+                  // name = event.target.value;
+                  setName(event.target.value);
+                }}
+                placeholder="Informe o seu nome"
+              />
+              <button type="submit" disabled={name.length === 0}>
+                Jogar
+              </button>
+            </form>
           </Widget.Content>
         </Widget>
 
@@ -59,7 +77,7 @@ export default function Home() {
         </Widget>
         <Footer />
       </QuizContainer>
-      <GitHubCorner projectUrl={"https://github.com/jhonnydelima"}/>
+      <GitHubCorner projectUrl="https://github.com/jhonnydelima/wizarding-world-quiz" />
     </QuizBackground>
   );
 }
