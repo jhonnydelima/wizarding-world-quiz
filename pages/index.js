@@ -1,12 +1,14 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
-import styled from 'styled-components';
 import { useRouter } from 'next/router';
 
 import db from '../db.json';
+import Button from '../src/components/Button';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
+import Input from '../src/components/Input';
 import QuizBackground from '../src/components/QuizBackground';
+import QuizContainer from '../src/components/QuizContainer';
 import QuizLogo from '../src/components/QuizLogo';
 import Widget from '../src/components/Widget';
 
@@ -17,18 +19,18 @@ import Widget from '../src/components/Widget';
 //   background-position: center;
 // `;
 
-export const QuizContainer = styled.div`
-  width: 100%;
-  max-width: 350px;
+// const QuizContainer = styled.div`
+//   width: 100%;
+//   max-width: 350px;
 
-  padding-top: 45px;
-  margin: auto 10%;
+//   padding-top: 45px;
+//   margin: auto 10%;
 
-  @media screen and (max-width: 500px) {
-    margin: auto;
-    padding: 15px;
-  }
-`;
+//   @media screen and (max-width: 500px) {
+//     margin: auto;
+//     padding: 15px;
+//   }
+// `;
 
 export default function Home() {
   const router = useRouter();
@@ -50,18 +52,15 @@ export default function Home() {
               console.log('Fazendo submissão por meio do react');
             }}
             >
-              <input
-                onChange={function (event) {
-                  console.log(event.target.value);
-                  // State
-                  // name = event.target.value;
-                  setName(event.target.value);
-                }}
+              <Input
+                name="userName"
+                onChange={(event) => setName(event.target.value)}
                 placeholder="Informe o seu nome"
+                value={name}
               />
-              <button type="submit" disabled={name.length === 0}>
-                Jogar
-              </button>
+              <Button type="submit" disabled={name.length === 0}>
+                {`Jogar ${name}`}
+              </Button>
             </form>
           </Widget.Content>
         </Widget>
