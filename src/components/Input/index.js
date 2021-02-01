@@ -16,6 +16,11 @@ const InputBase = styled.input`
   outline: 0;
 
   background-color: ${({ theme }) => theme.colors.mainBg};
+
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: ${({ theme }) => theme.colors.contrastText}DD;
+    opacity: 1; /* Firefox */
+  }
 `;
 
 export default function Input({ onChange, placeholder, ...props }) {
