@@ -17,7 +17,7 @@
 
 <p align="center">
   
-<img alt="Final Project Gif" src="https://github.com/jhonnydelima/wizarding-world-quiz/blob/main/home.png" />
+<img alt="Final project image" src="https://github.com/jhonnydelima/wizarding-world-quiz/blob/main/home.png" />
   
 </p>
 
