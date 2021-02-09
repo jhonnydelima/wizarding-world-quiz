@@ -6,7 +6,7 @@
   <a href="#-final-project">Final Project</a> |
   <a href="#-technologies">Technologies</a> |
   <a href="#-how-to-run-this-project">How to run this project</a> |
-  <a href="#-license">License</a> |
+  <a href="#-license">License</a>
 </div>
 
 ---
