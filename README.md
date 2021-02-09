@@ -4,11 +4,9 @@
 ---
 <div align="center">
   <a href="#-final-project">Final Project</a> |
-  <a href="#-about">About</a> |
   <a href="#-technologies">Technologies</a> |
   <a href="#-how-to-run-this-project">How to run this project</a> |
   <a href="#-license">License</a> |
-  <a href="#-credits">Credits</a>
 </div>
 
 ---
@@ -46,9 +44,9 @@
 </a>
 
 ---
-<h2> <img src="https://i.dlpng.com/static/png/6577858_preview.png" width="50px" align="center"/> How to run this project: </h2>
+<h3> <img src="https://i.dlpng.com/static/png/6577858_preview.png" width="50px" align="center"/> How to run this project: </h3>
 
-<h3>Steps</h3>
+<h4>Steps</h4>
 <h4>1. Clone this repository</h4>
 
 ```
