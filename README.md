@@ -1,78 +1,70 @@
-# Example app with styled-components
+<h1 align="center">Wizarding World Quiz</h1>
+<p align="center">A quiz app about the Wizarding World.</p> 
 
-This example features how you use a different styling solution than [styled-jsx](https://github.com/zeit/styled-jsx) that also supports universal styles. That means we can serve the required styles for the first render within the HTML and then load the rest in the client. In this case we are using [styled-components](https://github.com/styled-components/styled-components).
+---
+<div align="center">
+  <a href="#-final-project">Final Project</a> |
+  <a href="#-about">About</a> |
+  <a href="#-technologies">Technologies</a> |
+  <a href="#-how-to-run-this-project">How to run this project</a> |
+  <a href="#-license">License</a> |
+  <a href="#-credits">Credits</a>
+</div>
 
-For this purpose we are extending the `<Document />` and injecting the server side rendered styles into the `<head>`, and also adding the `babel-plugin-styled-components` (which is required for server side rendering). Additionally we set up a global [theme](https://www.styled-components.com/docs/advanced#theming) for styled-components using NextJS custom [`<App>`](https://nextjs.org/docs/advanced-features/custom-app) component.
+---
+## ✨ Final Project
+> Vercel: https://wizarding-world-quiz.jhonnydelima.vercel.app/
 
-## Deploy your own
+<p align="center">
+  
+<img alt="Final Project Gif" src="https://github.com/jhonnydelima/wizarding-world-quiz/blob/main/home.png" />
+  
+</p>
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+---
+### 🚀 Technologies
+> <a href="https://yarnpkg.com">
+ <img alt="Yarn" src="https://img.shields.io/badge/yarn-2C8EBB?style=for-the-badge&logo=yarn&logoColor=white"/>
+</a>
+<a href="https://reactjs.org">
+  <img alt="React" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+ </a> 
+<a href="https://nextjs.org">
+ <img alt="Next JS" src="https://img.shields.io/badge/next%20js%20-%23000000.svg?&style=for-the-badge&logo=next.js&logoColor=white"/>
+</a>
+<a href="https://styled-components.com">
+ <img alt="Styled Components" src="https://img.shields.io/badge/-Styled_Components-db7092?style=for-the-badge&logo=styled-components&logoColor=000" />
+</a>
+<a href="https://www.framer.com/motion/">
+ <img alt="Framer Motion" src="https://img.shields.io/badge/Framer_Motion%20-%23000000.svg?&style=for-the-badge&color=c41277"/>
+</a>
+<a href="https://lottiefiles.com">
+ <img alt="Lottie Files" src="https://img.shields.io/badge/React_Lottie%20-%23000000.svg?&style=for-the-badge&color=2cc9b2"/>
+</a>
+<a href="https://vercel.com/">
+ <img alt="Vercel" src="https://img.shields.io/badge/vercel%20-%23000000.svg?&style=for-the-badge&logo=vercel&logoColor=white"/>
+</a>
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-styled-components&project-name=with-styled-components&repository-name=with-styled-components)
+---
+<h2> <img src="https://i.dlpng.com/static/png/6577858_preview.png" width="50px" align="center"/> How to run this project: </h2>
 
-## How to use
+<h3>Steps</h3>
+<h4>1. Clone this repository</h4>
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-styled-components with-styled-components-app
-# or
-yarn create next-app --example with-styled-components with-styled-components-app
+```
+ $ git clone https://github.com/jhonnydelima/wizarding-world-quiz
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+<h4>2. Running the application on your terminal</h4>
 
-### Try it on CodeSandbox
+```
+#install the dependencies
+$ yarn install
 
-[Open this example on CodeSandbox](https://codesandbox.io/s/github/vercel/next.js/tree/canary/examples/with-styled-components)
-
-### Notes
-
-When wrapping a [Link](https://nextjs.org/docs/api-reference/next/link) from `next/link` within a styled-component, the [as](https://styled-components.com/docs/api#as-polymorphic-prop) prop provided by `styled` will collide with the Link's `as` prop and cause styled-components to throw an `Invalid tag` error. To avoid this, you can either use the recommended [forwardedAs](https://styled-components.com/docs/api#forwardedas-prop) prop from styled-components or use a different named prop to pass to a `styled` Link.
-
-<details>
-<summary>Click to expand workaround example</summary>
-<br />
-
-**components/StyledLink.js**
-
-```javascript
-import Link from 'next/link'
-import styled from 'styled-components'
-
-const StyledLink = ({ as, children, className, href }) => (
-  <Link href={href} as={as} passHref>
-    <a className={className}>{children}</a>
-  </Link>
-)
-
-export default styled(StyledLink)`
-  color: #0075e0;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    color: #40a9ff;
-  }
-
-  &:focus {
-    color: #40a9ff;
-    outline: none;
-    border: 0;
-  }
-`
+#start the server
+$ yarn dev
 ```
 
-**pages/index.js**
-
-```javascript
-import StyledLink from '../components/StyledLink'
-
-export default () => (
-  <StyledLink href="/post/[pid]" forwardedAs="/post/abc">
-    First post
-  </StyledLink>
-)
-```
-
-</details>
+---
+### 📄 License
+This project is under MIT license. See the [LICENSE](https://github.com/jhonnydelima/wizarding-world-quiz/blob/main/LICENSE) file for more details.
