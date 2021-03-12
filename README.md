@@ -57,7 +57,7 @@
 
 ```
 #install the dependencies
-$ yarn install
+$ yarn
 
 #start the server
 $ yarn dev
